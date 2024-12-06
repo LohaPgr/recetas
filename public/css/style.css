@@ -1,0 +1,216 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+  }
+  header {
+	background-color: salmon;
+	padding: 20px;
+	position: sticky;
+	top: 0;
+  }
+  .titles {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1200px;
+	margin: auto;
+  }
+  .list-recipes {
+	max-width: 1200px;
+	margin: auto;
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  }
+  .card-recipe {
+	max-width: 400px;
+	height: auto;
+	margin: 10px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 400px;
+  }
+  .card-image {
+	width: 100%;
+	height: 230px;
+  }
+  img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+  }
+  .card-info {
+	padding: 14px;
+	background-color: sandybrown;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	flex-grow: 1;
+	justify-content: space-between;
+  }
+  .name {
+	font-size: 24px;
+  }
+  .description {
+	font-size: 18px;
+	font-weight: 100;
+  }
+  .card-info a {
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+	background-color: darkorange;
+	padding: 6px 12px; /* Espaciado interno reducido */
+	border-radius: 4px; /* Bordes redondeados más sutiles */
+	text-align: center;
+	font-size: 14px; /* Tamaño de letra más pequeño */
+	font-weight: bold;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+	transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Efecto hover */
+  .card-info a:hover {
+	background-color: orangered;
+	transform: scale(1.05);
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Efecto activo */
+  .card-info a:active {
+	transform: scale(0.95);
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .footer {
+	background-color: #333; /* Color de fondo oscuro */
+	color: #fff; /* Color de texto blanco */
+	text-align: center; /* Centrar el contenido */
+	padding: 20px; /* Espaciado interno */
+	font-size: 14px; /* Tamaño de fuente */
+	position: relative;
+	margin-top: 30px; /* Separación del contenido principal */
+	box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3); /* Sombras para un efecto sutil */
+  }
+
+  .modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+  }
+
+  .modal-content {
+	background-color: #fff; /* Fondo blanco para el modal */
+	padding: 20px; /* Espaciado interno */
+	border-radius: 8px; /* Bordes redondeados */
+	width: 90%; /* Ajuste al 90% del ancho de la ventana */
+	max-width: 800px; /* Máximo ancho */
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombras elegantes */
+	overflow-y: auto; /* Scroll interno si el contenido es muy largo */
+	max-height: 80vh; /* Máximo alto al 80% de la ventana */
+  }
+
+  .modal-content h2 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	color: salmon; /* Título resaltado */
+  }
+
+  .modal-content img {
+	width: 100%; /* Ajusta la imagen al ancho del contenedor */
+	height: auto; /* Mantiene la proporción */
+	max-height: 400px; /* Limita la altura máxima */
+	object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+	object-position: center; /* Centra la imagen dentro del área visible */
+	border-radius: 5px;
+  }
+
+  .modal-content p {
+	margin-bottom: 15px; /* Espaciado entre párrafos */
+	line-height: 1.6; /* Mejor legibilidad */
+  }
+
+  .modal-content h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	color: darkorange; /* Títulos de secciones en naranja */
+  }
+
+  .modal-content ol {
+	padding-left: 20px; /* Espaciado para la numeración */
+	margin-bottom: 20px; /* Espaciado inferior */
+  }
+
+  .modal-content button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	background-color: salmon; /* Color del botón */
+	border: none;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .modal-content button:hover {
+	background-color: darksalmon;
+	transform: scale(1.05);
+  }
+
+  .modal-content button:active {
+	transform: scale(0.95);
+  }
+
+  .close-modal {
+	margin-top: 20px;
+	padding: 10px 20px;
+	background-color: salmon;
+	border: none;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+  }
+
+  .close-modal:hover {
+	background-color: darksalmon;
+  }
+  body.no-scroll {
+	overflow: hidden; /* Bloquea el scroll en la página principal */
+  }
+  @media (max-width: 768px) {
+	.list-recipes {
+	  grid-template-columns: repeat(2, 1fr);
+	  padding: 20px;
+	}
+	.titles {
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	}
+  }
+  @media (max-width: 585px) {
+	.list-recipes {
+	  grid-template-columns: repeat(1, 1fr);
+	}
+	.card-recipe {
+	  max-width: 100%;
+	}
+	.titles h1 {
+	  color: darkslateblue;
+	}
+  }
